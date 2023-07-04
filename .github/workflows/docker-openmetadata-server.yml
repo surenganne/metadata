@@ -93,7 +93,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         id: attach_release
         run: |
-          echo "UPLOAD_URL=$(curl -H "Accept: application/vnd.github+json" -H "Authorization: Bearer $GITHUB_TOKEN" -H "X-GitHub-Api-Version: 2022-11-28" https://api.github.com/repos/open-metadata/OpenMetadata/releases/tags/${{ inputs.DOCKER_RELEASE_TAG }}-release | jq .upload_url | tr -d '"' )" >> $GITHUB_OUTPUT
+          echo "UPLOAD_URL=$(curl -H "Accept: application/vnd.github+json" -H "Authorization: Bearer $GITHUB_TOKEN" -H "X-GitHub-Api-Version: 2022-11-28" https://api.github.com/repos/surenganne/metadata/releases/tags/${{ inputs.DOCKER_RELEASE_TAG }}-release | jq .upload_url | tr -d '"' )" >> $GITHUB_OUTPUT
 
       - name: Download application from Artifact
         uses: actions/download-artifact@v2
@@ -141,11 +141,11 @@ jobs:
         id:  input_check
         run: |
             if ${{ github.event_name == 'release' }}; then
-                echo "tags=openmetadata/server:${{ env.DOCKER_RELEASE_TAG }},openmetadata/server:latest" >> $GITHUB_OUTPUT
+                echo "tags=surenganne/om-server:${{ env.DOCKER_RELEASE_TAG }},surenganne/om-server:latest" >> $GITHUB_OUTPUT
             elif ${{ github.event_name == 'workflow_dispatch' && inputs.push_latest_tag_to_release }}; then
-                echo "tags=openmetadata/server:${{ env.DOCKER_RELEASE_TAG }},openmetadata/server:latest" >> $GITHUB_OUTPUT
+                echo "tags=surenganne/om-server:${{ env.DOCKER_RELEASE_TAG }},surenganne/om-server:latest" >> $GITHUB_OUTPUT
             else
-                echo "tags=openmetadata/server:${{ env.DOCKER_RELEASE_TAG }}" >> $GITHUB_OUTPUT
+                echo "tags=surenganne/om-server:${{ env.DOCKER_RELEASE_TAG }}" >> $GITHUB_OUTPUT
             fi
 
       - name: Build and push if event is workflow_dispatch and input is checked
