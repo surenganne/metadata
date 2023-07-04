@@ -69,7 +69,7 @@ setup(
     packages=find_packages(include=[f"{PLUGIN_NAME}.*", PLUGIN_NAME]),
     include_package_data=True,
     package_data={PLUGIN_NAME: get_package_data()},
-    version="1.0.4.4",
+    version="1.0.4",
     url="https://open-metadata.org/",
     author="OpenMetadata Committers",
     license="Apache License 2.0",
@@ -86,7 +86,7 @@ setup(
     dependency_links=[],
     project_urls={
         "Documentation": "https://docs.open-metadata.org/",
-        "Source": "https://github.com/open-metadata/OpenMetadata",
+        "Source": "https://github.com/surenganne/metadata",
     },
     install_requires=list(base_requirements),
     extras_require={
