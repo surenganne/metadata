@@ -47,7 +47,7 @@ setup(
     install_requires=["incremental"],
     project_urls={
         "Documentation": "https://docs.open-metadata.org/",
-        "Source": "https://github.com/open-metadata/OpenMetadata",
+        "Source": "https://github.com/surenganne/metadata",
     },
     packages=find_namespace_packages(where="./src", exclude=["tests*"]),
     extras_require={
