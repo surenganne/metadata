@@ -258,7 +258,7 @@ test = {
 build_options = {"includes": ["_cffi_backend"]}
 setup(
     name="openmetadata-ingestion",
-    version="1.0.4.4",
+    version="1.0.4",
     url="https://open-metadata.org/",
     author="OpenMetadata Committers",
     license="Apache License 2.0",
@@ -273,7 +273,7 @@ setup(
     dependency_links=[],
     project_urls={
         "Documentation": "https://docs.open-metadata.org/",
-        "Source": "https://github.com/open-metadata/OpenMetadata",
+        "Source": "https://github.com/surenganne/metadata",
     },
     packages=find_namespace_packages(where="./src", exclude=["tests*"]),
     namespace_package=["metadata"],
